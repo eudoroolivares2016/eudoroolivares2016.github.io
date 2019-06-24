@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
+<body>
 
-<h1>
-hello world 
-</h1>
-    <body>
+<h1>The onclick Event</h1>
 
+<p>The onclick event is used to trigger a function when an element is clicked on.</p>
 
-    <button onclick="myFunction">Click me</button>
+<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+
+<button onclick="myFunction()">Click me</button>
+
 <p id="demo"></p>
-  <script>
-  alert("This javascript is working");
-    function myFunction()
-      {
-       alert("You pressed the button correctly");    
-          return;
-      }
-    
-    
-  </script>
 
-  
-  
-  </body>
+<script>
+function myFunction() {
+  alert("stuff");
+}
+</script>
+
+</body>
 </html>
