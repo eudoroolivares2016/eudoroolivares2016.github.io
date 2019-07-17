@@ -4,34 +4,39 @@
 
 <h1>This page is going to contain a Calander type of object that will keep track of all of the workouts that I do and what I eat for the public to know</h1>
 
-<p>This is the second page which will hold information about stuff i've done and enjoyed.</p>
+<div class="calendar" id="calendar">
+    <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
+        <span id="curMonth"></span>
+        <div id="months" class="months dropdown"></div>
+    </div>
 
-  <p> Workout plan for today was to do fullbody workouts</p>
-<div id="cal"> 
-    <div class="header"style="background-color:lightblue" > 
- 
-    </div> 
-  
-    <table id="days"> 
-  
-            <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-            </tr>
- 
-    </table> 
-    <div id="cal-frame"> 
- 
-    </div> 
+    <div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
+        <span id="curYear"></span>
+        <div id="years" class="years dropdown"></div>
+    </div>
 
-  </div>
-  
+    <div class="clear"></div>
 
+    <div class="calendar-dates">
+        <div class="days">
+            <div class="day label">SUN</div>
+            <div class="day label">MON</div>
+            <div class="day label">TUE</div>
+            <div class="day label">WED</div>
+            <div class="day label">THUR</div>
+            <div class="day label">FRI</div>
+            <div class="day label">SAT</div>
+
+            <div class="clear"></div>
+        </div>
+
+        <div id="calendarDays" class="days">
+        </div>
+    </div>
+</div>
+
+  
+  
   <style>
 
 
@@ -41,10 +46,39 @@
   
 
 <script>
+<script>
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+    function drawCalendarMonths()
+    {
+        for(var i = 0; i < months.length; i++)
+        {
+            var doc = document.createElement("div");
+            doc.innerHTML = months[i];
+            doc.classList.add("dropdown-item");
 
+            doc.onclick = (function () {
+                var selectedMonth = i;
+                return function ()
+                {
+                    month = selectedMonth;
+                    document.getElementById("curMonth").innerHTML = months[month];
+                    loadCalendarDays();
+                    return month;
+                }
+            })();
+
+            document.getElementById("months").appendChild(doc);
+        }
+    }
 </script>
 
+  
+  
+
+</script>
+  
+  
 </body>
 </html>
 
