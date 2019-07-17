@@ -26,17 +26,34 @@ function get_calander(day_no,days){ //pass in the number of the day and the days
   table.appendChild(tr);
   //create the second row
   tr = document.createElement('tr');
+ var i;
   for(var i =0; i <= 6 i++)
   {
     if( i == day_no){
      break;
     }
+    td = document.createElement('tr');
     td.innerHTML = "";
-    tr.appendChild('td');
-    var count = 1;
-    
-                   
+    tr.appendChild('td');              
   }
-  
+   var count = 1;
+  for(;i<=6;i++){
+    var td = document.createElement('td');
+    td.innerHTML = count;
+    count++;
+    tr.appendChild(tr);
+    //rest of the date rows
+    for(var r = 3; r <= 6; r++){
+      tr = document.createElement('tr');
+        for(var c =0; c<=6;c++){
+        if(count > days){
+          table.appendChild(tr);
+          return table;
+        }
+        
+        
+        }
+    }
+  }
   
 }
