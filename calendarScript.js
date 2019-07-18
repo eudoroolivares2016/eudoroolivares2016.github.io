@@ -50,7 +50,66 @@ function get_calander(day_no,days){ //pass in the number of the day and the days
           table.appendChild(tr);
           return table;
         }
+        /*
         
+        import java.util.*;
+
+class Main {
+  
+  public static void populateExerciseList(ArrayList workoutList){ 
+
+    ArrayList<String> squatMuscles = new ArrayList<String>(Arrays.asList("quad","hamstrings","glutes"));
+    workout squat = new workout(10,squatMuscles);
+    workoutList.add(squat);
+    ArrayList<String> bicepCurlMuscles = new ArrayList<String>(Arrays.asList("bicep"));
+    workout bicepCurl = new workout(3,bicepCurlMuscles); 
+    workoutList.add(bicepCurl);
+
+  }
+  public static void main(String[] args) {
+    ArrayList<String> typesOfRoutines = new ArrayList<String>(Arrays.asList("strength","hypertrophy","endurence"));
+    
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the difficulty of the routine you want to make 100,200,300 or 400");
+    int difficultyOfRoutine = scan.nextInt(); //get the difficulty of the next workout
+    
+        System.out.println("Enter the type of workout you want: strength,hypertrophy,endurence");
+    String typeOfWorkout = scan.nextString(); //get the difficulty of the next workout
+    
+   System.out.println(difficultyOfRoutine); 
+   System.out.println(typeOfWorkout);
+   ArrayList<workout> masterList = new ArrayList<workout>();
+   populateExerciseList(masterList); //populates the list
+   for(workout c: masterList)
+   System.out.println(c.difficulty);
+
+import java.util.*;
+
+public class workout
+{
+int difficulty;
+ArrayList<String> musclesWorked = new ArrayList<String>();
+
+  public workout(int dif, ArrayList workedMuscles)
+  {
+  this.difficulty = dif;
+  this.musclesWorked = workedMuscles;
+
+  }
+
+
+
+}
+  }
+
+
+
+}
+        
+        
+        
+        
+       */
         
         }
     }
